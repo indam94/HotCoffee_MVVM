@@ -9,3 +9,4 @@
 import Foundation
 
 let API_KEY = "https://guarded-retreat-82533.herokuapp.com/orders"
+let ad = ""
