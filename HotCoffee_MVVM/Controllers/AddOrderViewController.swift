@@ -15,6 +15,11 @@ class AddOrderViewController: UIViewController, UITableViewDelegate, UITableView
     
     @IBOutlet weak var tableView: UITableView!
     
+    @IBOutlet weak var nameTextField: UITextField!
+    
+    @IBOutlet weak var emailTextField: UITextField!
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -27,7 +32,7 @@ class AddOrderViewController: UIViewController, UITableViewDelegate, UITableView
         self.view.addSubview(self.coffeeSizesSegmentCotrol)
         
         self.coffeeSizesSegmentCotrol.topAnchor.constraint(equalTo: self.tableView.bottomAnchor, constant: 20).isActive = true
-        self.coffeeSizesSegmentCotrol.centerXAnchor.constraint(equalTo: self.view.centerXAnchor)
+        self.coffeeSizesSegmentCotrol.centerXAnchor.constraint(equalTo: self.view.centerXAnchor).isActive = true
     }
     
     func numberOfSections(in tableView: UITableView) -> Int {
@@ -47,4 +52,29 @@ class AddOrderViewController: UIViewController, UITableViewDelegate, UITableView
         return cell
     }
     
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        tableView.cellForRow(at: indexPath)?.accessoryType = .checkmark
+    }
+    
+    func tableView(_ tableView: UITableView, didDeselectRowAt indexPath: IndexPath) {
+        tableView.cellForRow(at: indexPath)?.accessoryType = .none
+    }
+    
+    @IBAction func save(_ sender: Any) {
+        
+        let name = self.nameTextField.text
+        let email = self.emailTextField.text
+        
+        let selectedSize = self.coffeeSizesSegmentCotrol.titleForSegment(at: self.coffeeSizesSegmentCotrol.selectedSegmentIndex)
+        
+        guard let indexPath = self.tableView.indexPathForSelectedRow else{
+            fatalError("Error in Selecting Coffee")
+        }
+        
+        self.vm.name = name
+        self.vm.email = email
+        self.vm.selectedType = self.vm.types[indexPath.row]
+        self.vm.selectedSize = selectedSize
+        
+    }
 }
