@@ -17,6 +17,7 @@
 		22C6C7E5237B990000519419 /* WebService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22C6C7E4237B990000519419 /* WebService.swift */; };
 		22C6C7E8237B9BAD00519419 /* Order.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22C6C7E7237B9BAD00519419 /* Order.swift */; };
 		22C6C7EB237BAF8A00519419 /* OrderViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22C6C7EA237BAF8A00519419 /* OrderViewModel.swift */; };
+		22C6C7ED237BB4E600519419 /* AddCoffeeOrderViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22C6C7EC237BB4E600519419 /* AddCoffeeOrderViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -32,6 +33,7 @@
 		22C6C7E4237B990000519419 /* WebService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebService.swift; sourceTree = "<group>"; };
 		22C6C7E7237B9BAD00519419 /* Order.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Order.swift; sourceTree = "<group>"; };
 		22C6C7EA237BAF8A00519419 /* OrderViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderViewModel.swift; sourceTree = "<group>"; };
+		22C6C7EC237BB4E600519419 /* AddCoffeeOrderViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddCoffeeOrderViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -107,6 +109,7 @@
 			isa = PBXGroup;
 			children = (
 				22C6C7EA237BAF8A00519419 /* OrderViewModel.swift */,
+				22C6C7EC237BB4E600519419 /* AddCoffeeOrderViewModel.swift */,
 			);
 			path = ViweModels;
 			sourceTree = "<group>";
@@ -183,6 +186,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				22C6C7E5237B990000519419 /* WebService.swift in Sources */,
+				22C6C7ED237BB4E600519419 /* AddCoffeeOrderViewModel.swift in Sources */,
 				22C6C7DF237B917B00519419 /* OrdersTableViewController.swift in Sources */,
 				22C6C7C7237B8E2200519419 /* AppDelegate.swift in Sources */,
 				22C6C7E1237B91C700519419 /* AddOrderViewController.swift in Sources */,

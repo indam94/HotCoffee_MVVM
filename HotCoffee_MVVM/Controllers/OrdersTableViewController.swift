@@ -10,6 +10,8 @@ import UIKit
 
 class OrdersTableViewController: UITableViewController{
     
+    var orderListViewModel = OrderListViewModel()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -20,21 +22,40 @@ class OrdersTableViewController: UITableViewController{
         
         guard let coffeeOrderURL = URL(string: "https://guarded-retreat-82533.herokuapp.com/orders") else{
             fatalError("URL IS INCORRECT!")
-            return
         }
         
         let resource = Resource<[Order]>(url:coffeeOrderURL)
         
-        WebService().load(resource: resource){ result in
+        WebService().load(resource: resource){[weak self] result in
             
             switch(result){
             case .success(let orders):
-                print(orders)
+                self?.orderListViewModel.ordersViewModel = orders.map(OrderViewModel.init)
+                self?.tableView.reloadData()
             case .failure(let error):
                 print(error)
             }
             
         }
         
+    }
+    
+    override func numberOfSections(in tableView: UITableView) -> Int {
+        return 1
+    }
+    
+    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return self.orderListViewModel.ordersViewModel.count
+    }
+    
+    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let vm = self.orderListViewModel.orderViewModel(at: indexPath.row)
+        
+        let cell = tableView.dequeueReusableCell(withIdentifier: "OrdersTableViewCell", for: indexPath)
+        
+        cell.textLabel?.text = vm.type
+        cell.detailTextLabel?.text = vm.size
+        
+        return cell
     }
 }
