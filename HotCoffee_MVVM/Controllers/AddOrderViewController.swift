@@ -8,7 +8,15 @@
 
 import UIKit
 
+protocol AddCoffeeOrderDelegate {
+    func addCoffeeOrderViewControllerDidSave(order: Order, controller: UIViewController)
+    
+    func addCoffeeOrderViewControllerDidClose(controller: UIViewController)
+}
+
 class AddOrderViewController: UIViewController, UITableViewDelegate, UITableViewDataSource{
+    
+    var delegate: AddCoffeeOrderDelegate?
     
     private var vm = AddCoffeeOrderViewModel()
     private var coffeeSizesSegmentCotrol: UISegmentedControl!
@@ -22,6 +30,7 @@ class AddOrderViewController: UIViewController, UITableViewDelegate, UITableView
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         
         setupUI()
     }
@@ -60,6 +69,13 @@ class AddOrderViewController: UIViewController, UITableViewDelegate, UITableView
         tableView.cellForRow(at: indexPath)?.accessoryType = .none
     }
     
+    @IBAction func close(_ sender: Any) {
+        
+        if let delegate = self.delegate{
+            delegate.addCoffeeOrderViewControllerDidClose(controller: self)
+        }
+        
+    }
     @IBAction func save(_ sender: Any) {
         
         let name = self.nameTextField.text
@@ -81,6 +97,13 @@ class AddOrderViewController: UIViewController, UITableViewDelegate, UITableView
             
             switch result {
             case .success(let order):
+                
+                if let order = order, let delegate = self.delegate{
+                    DispatchQueue.main.async {
+                        delegate.addCoffeeOrderViewControllerDidSave(order: order, controller: self)
+                    }
+                }
+                
                 print(order)
             case .failure(let error):
                 print(error)
