@@ -31,7 +31,7 @@ struct Order: Codable{
 extension Order{
     
     static var all: Resource<[Order]> = {
-         guard let url = URL(string: "https://guarded-retreat-82533.herokuapp.com/orders") else{
+         guard let url = URL(string: API_KEY) else{
                    fatalError("URL is Incorrect")
                }
         
@@ -42,7 +42,7 @@ extension Order{
         
         let order = Order(vm)
         
-        guard let url = URL(string: "https://guarded-retreat-82533.herokuapp.com/orders") else{
+        guard let url = URL(string: API_KEY) else{
             fatalError("URL is Incorrect")
         }
         
