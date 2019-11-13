@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		22C6C7C7237B8E2200519419 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22C6C7C6237B8E2200519419 /* AppDelegate.swift */; };
-		22C6C7C9237B8E2200519419 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22C6C7C8237B8E2200519419 /* SceneDelegate.swift */; };
 		22C6C7CE237B8E2200519419 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 22C6C7CC237B8E2200519419 /* Main.storyboard */; };
 		22C6C7D1237B8E2200519419 /* HotCoffee_MVVM.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 22C6C7CF237B8E2200519419 /* HotCoffee_MVVM.xcdatamodeld */; };
 		22C6C7D3237B8E2500519419 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 22C6C7D2237B8E2500519419 /* Assets.xcassets */; };
@@ -22,7 +21,6 @@
 /* Begin PBXFileReference section */
 		22C6C7C3237B8E2200519419 /* HotCoffee_MVVM.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HotCoffee_MVVM.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		22C6C7C6237B8E2200519419 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		22C6C7C8237B8E2200519419 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		22C6C7CD237B8E2200519419 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		22C6C7D0237B8E2200519419 /* HotCoffee_MVVM.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = HotCoffee_MVVM.xcdatamodel; sourceTree = "<group>"; };
 		22C6C7D2237B8E2500519419 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -68,7 +66,6 @@
 				22C6C7E3237B98EB00519419 /* Services */,
 				22C6C7DD237B8FD000519419 /* Controllers */,
 				22C6C7C6237B8E2200519419 /* AppDelegate.swift */,
-				22C6C7C8237B8E2200519419 /* SceneDelegate.swift */,
 				22C6C7CC237B8E2200519419 /* Main.storyboard */,
 				22C6C7D2237B8E2500519419 /* Assets.xcassets */,
 				22C6C7D4237B8E2500519419 /* LaunchScreen.storyboard */,
@@ -178,7 +175,6 @@
 				22C6C7DF237B917B00519419 /* OrdersTableViewController.swift in Sources */,
 				22C6C7C7237B8E2200519419 /* AppDelegate.swift in Sources */,
 				22C6C7E1237B91C700519419 /* AddOrderViewController.swift in Sources */,
-				22C6C7C9237B8E2200519419 /* SceneDelegate.swift in Sources */,
 				22C6C7D1237B8E2200519419 /* HotCoffee_MVVM.xcdatamodeld in Sources */,
 				22C6C7E8237B9BAD00519419 /* Order.swift in Sources */,
 			);
@@ -327,6 +323,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = DE97A6B9N7;
 				INFOPLIST_FILE = HotCoffee_MVVM/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -334,7 +331,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "LDG.HotCoffee-MVVM";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -345,6 +342,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = DE97A6B9N7;
 				INFOPLIST_FILE = HotCoffee_MVVM/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -352,7 +350,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "LDG.HotCoffee-MVVM";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
